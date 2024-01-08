@@ -31,4 +31,8 @@ export class UsersService {
   async findAll(): Promise<User[]> {
     return await this.userModel.find().exec();
   }
+
+  async findOne(username: string): Promise<User | undefined> {
+    return this.userModel.findOne((user) => user.username === username);
+  }
 }

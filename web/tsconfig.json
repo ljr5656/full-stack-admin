@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": [
+      "vite/client",
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": "./", // Base directory for resolving non-relative module names
+    "paths": {
+      "@/*": [
+        "src/*"
+      ] // Path alias for the src directory
+    },
+    // Other compiler options...
+  }
+}
