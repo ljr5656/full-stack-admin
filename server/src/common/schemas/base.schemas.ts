@@ -7,8 +7,8 @@ export class BaseSchema extends Document {
   _d: 0 | 1;
 
   @Prop({ default: Date.now() })
-  createTime: number;
+  create_time: number;
 
   @Prop({ default: Date.now() })
-  updateTime: number;
+  update_time: number;
 }

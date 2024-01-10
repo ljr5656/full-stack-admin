@@ -1,4 +1,4 @@
-import { Model, ObjectId, Types } from 'mongoose';
+import { Model } from 'mongoose';
 import { Menu } from './schemas/menu.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable } from '@nestjs/common';
@@ -7,7 +7,6 @@ import {
   DeleteMenuDto,
   UpdateMenuDto,
 } from './dto/create-menu.dto';
-import { toObjectId } from 'src/utils';
 
 @Injectable()
 export class MenuService {
@@ -20,8 +19,8 @@ export class MenuService {
     const createMenu = new this.menuModel(createMenuDto);
     const savedMenu = await createMenu.save();
 
-    if (createMenuDto.parent === '' || createMenuDto.parent === null) {
-      await this.menuModel.findByIdAndUpdate(createMenuDto.parent, {
+    if (createMenuDto.parent_id === '' || createMenuDto.parent_id === null) {
+      await this.menuModel.findByIdAndUpdate(createMenuDto.parent_id, {
         $push: { children: savedMenu._id },
       });
     }

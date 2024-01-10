@@ -3,14 +3,18 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateMenuDto {
   @ApiProperty()
-  readonly label: string;
+  readonly name: string;
   @ApiProperty({ required: false, default: null })
-  readonly parent?: string | null;
+  readonly parent_id?: string | null;
+  @ApiProperty({ required: true })
+  readonly path: string;
+  @ApiProperty({ required: true })
+  readonly component: string;
 }
 
 export class UpdateMenuDto {
   @ApiProperty({ required: false })
-  readonly label: string;
+  readonly name: string;
   @ApiProperty({ required: true })
   readonly _id: string;
 }

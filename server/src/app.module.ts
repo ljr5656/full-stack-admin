@@ -5,7 +5,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './modules/users/users.module';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { MenuModule } from './modules/menu/menu.module';
-
 @Module({
   imports: [
     MongooseModule.forRoot(

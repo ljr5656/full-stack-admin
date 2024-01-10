@@ -5,13 +5,16 @@ import { BaseSchema } from 'src/common/schemas/base.schemas';
 @Schema()
 export class Menu extends BaseSchema {
   @Prop({ unique: true })
-  label: string;
+  name: string;
 
   @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'Menu', default: null })
-  parent: Menu;
+  parent_id: Menu;
 
-  @Prop({ type: [MongooseSchema.Types.ObjectId], ref: 'Menu', default: [] })
-  children: MongooseSchema.Types.ObjectId[];
+  @Prop({ unique: true, isNaN: false })
+  path: string;
+
+  @Prop({ unique: true, isNaN: false })
+  component: string;
 }
 
 export const MenuSchema = SchemaFactory.createForClass(Menu);
