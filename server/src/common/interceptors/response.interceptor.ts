@@ -24,13 +24,7 @@ export class ResponseInterceptor implements NestInterceptor {
           return {
             success: false,
             data: null,
-            error: {
-              message:
-                error instanceof BadGatewayException
-                  ? 'Bad Gateway'
-                  : 'Internal Server Error',
-              statusCode: error.getStatus(),
-            },
+            error,
           };
         });
       }),
