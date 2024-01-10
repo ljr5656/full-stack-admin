@@ -1,24 +1,75 @@
+// {
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "lib": [
+//       "DOM",
+//       "DOM.Iterable",
+//       "ESNext"
+//     ],
+//     "types": [
+//       "antd",
+//       "vite/client",
+//       "node"
+//     ],
+//     "module": "ESNext",
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "jsx": "react",
+//     "baseUrl": "./", // Base directory for resolving non-relative module names
+//     "paths": {
+//       "@/*": [
+//         "src/*"
+//       ] // Path alias for the src directory
+//     },
+//     // Other compiler options...
+//   },
+//   "references": [
+//     {
+//       "path": "./tsconfig.node.json"
+//     }
+//   ]
+// }
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
-    "types": [
-      "vite/client",
-    ],
+    "useDefineForClassFields": true,
     "module": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "jsx": "react",
-    "baseUrl": "./", // Base directory for resolving non-relative module names
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": [
         "src/*"
-      ] // Path alias for the src directory
+      ]
     },
-    // Other compiler options...
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/entry-client.js",
+    "src/entry-server.js"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

@@ -1,19 +1,11 @@
-import React, { Component, Suspense, useEffect } from 'react';
-import Loading from '@/components/loading';
-import { RouterProvider } from 'react-router-dom';
-// import { router } from './routers/router';
-setTimeout(() => {
-	console.log(import.meta);
-}, 3000);
-const App = () => {
-	return (
-		<Suspense fallback={<Loading />}>
-			{/* <AuthProvider>
+import React from 'react';
+import BasicLayout from './layouts/basicLayout/index';
+import Router from './routers';
+import 'normalize.css';
+import '@/app.css';
 
-			</AuthProvider>
-			<RouterProvider router={router}></RouterProvider> */}
-		</Suspense>
-	);
+const App = () => {
+	return <Router></Router>;
 };
 
 export default App;

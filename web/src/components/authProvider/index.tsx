@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import Login from '@/pages/login';
-import SessionUtils from '@/utils/session';
+import SessionUtils from '@/utils/sessionUtil';
 
 const AuthContext = createContext(undefined);
 const AuthProvider = ({ children }: any) => {
